@@ -1,0 +1,112 @@
+nav {
+  ul {
+    @include j_c-a_i-center();
+  }
+  a {
+    color: $primary-color;
+  }
+}
+
+header {
+  height: $huge;
+  background-image: url("../images/header.jpg");
+  background-size: cover;
+  text-align: center;
+  padding-top: $medium;
+  font-weight: 800 !important;
+}
+.cards {
+  @include flex_column();
+  @include j_c-a_i-center();
+}
+.card {
+  @include flex_column();
+  background-color: $secondary-color;
+  border: $border-size solid $border-color;
+  border-radius: 5px;
+  margin: $small;
+  padding: $padding;
+
+  img {
+    height: $large;
+    width: 60%;
+    align-self: center;
+  }
+}
+
+main {
+  margin: 2rem;
+  @include flex_column();
+  aside {
+    border: $border-size solid $border-color;
+    padding: $padding;
+  }
+  article {
+    padding: $padding;
+  }
+}
+
+footer {
+  background-color: $primary-color;
+  height: $medium;
+  padding-top: $padding;
+  ul {
+    @include j_c-a_i-center();
+    li {
+      list-style: none;
+      padding-right: $padding;
+      a {
+        color: white;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $tablet) {
+   .cards {
+    flex-flow: row wrap;
+    @include j_c-a_i-center();
+  }
+  .card {
+    flex-flow: row;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    margin: .5rem;
+    &card-text {
+      padding: 0 $tiny $tiny $tiny;
+    }
+  }
+
+  nav {
+    ul {
+      justify-content: flex-end;
+      padding-right: $small;
+    }
+  }
+
+  main {
+    flex-flow: row;
+    aside {
+      width: 25%;
+    }
+    article {
+      width: 50%;
+    }
+  }
+}
+
+@media screen and (min-width: $desktop) {
+  .cards {
+    flex-flow: row wrap;
+    @include j_c-a_i-center();
+  }
+  .card {
+    flex-basis: 40%;
+    flex-flow: row;
+    .img {
+      width: 100%;
+    }
+  }
+}
